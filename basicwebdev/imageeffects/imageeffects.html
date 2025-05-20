@@ -62,9 +62,9 @@
       opacity: 0.6;
     }
 
-    /* 3. Dinosaur - Drop shadow */
+    /* 3. Dinosaur - Hue rotation */
     .shadow img {
-      filter: drop-shadow(6px 6px 6px rgba(0,0,0,0.5));
+      filter: hue-rotate(230deg) drop-shadow(6px 6px 6px rgba(0,0,0,0.5));
     }
 
     /* 4. Seagull - Gradient background + shadow */
@@ -77,10 +77,11 @@
       width: 80%;
     }
 
-    /* 5. Butterfly - Inverted colors + oval */
+    /* 5. Butterfly - Inverted colors + wave clipping */
     .invert-oval img {
       filter: invert(100%);
       clip-path: ellipse(50% 45% at 50% 50%);
+      clip-path: path("M0,125 Q50,90 100,125 T200,125 T300,125 T400,125 T500,125 L500,250 L0,250 Z");
     }
 
     /* 6. Theater - Blur with overlay text */
@@ -111,7 +112,7 @@
       <img src="images/tic-tac-toe.png" alt="Tic Tac Toe" class="overlay">
     </div>
 
-    <!-- 3. Dinosaur with shadow -->
+    <!-- 3. Dinosaur with hue rotation and shadow -->
     <div class="img-card shadow">
       <img src="images/dinosaur.png" alt="Dino">
     </div>
@@ -121,7 +122,7 @@
       <img src="images/seagull.png" alt="Seagull">
     </div>
 
-    <!-- 5. Butterfly - Inverted + oval -->
+    <!-- 5. Butterfly - Inverted + wave clip -->
     <div class="img-card invert-oval">
       <img src="images/butterfly.jpg" alt="Butterfly">
     </div>
