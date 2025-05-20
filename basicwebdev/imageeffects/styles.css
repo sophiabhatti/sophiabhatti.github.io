@@ -1,6 +1,6 @@
 body {
   font-family: sans-serif;
-  background: #f0f0f0;
+  background: #f4f4f4;
   text-align: center;
 }
 
@@ -16,60 +16,80 @@ h1 {
   padding: 30px;
 }
 
-.image-item {
-  background: white;
-  padding: 10px;
-  border-radius: 10px;
-  box-shadow: 0 0 4px rgba(0,0,0,0.2);
+.card {
   width: 250px;
-}
-
-.image-item img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 6px;
-}
-
-/* Effects */
-.shadow img {
-  box-shadow: 10px 10px 15px rgba(0,0,0,0.6);
-}
-
-.spotlight img {
-  border-radius: 6px;
-  background: radial-gradient(ellipse at center, rgba(255,255,255,0.3) 0%, rgba(0,0,0,0.8) 100%);
-  mix-blend-mode: overlay;
-}
-
-.grayscale img {
-  filter: grayscale(100%);
-}
-
-.blur img {
-  filter: blur(2px) contrast(120%);
-}
-
-.layered {
+  height: 250px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 0 4px rgba(0,0,0,0.15);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
 }
 
-.layered .field {
+.card img {
+  max-width: 100%;
+  max-height: 100%;
   display: block;
+}
+
+/* Oval Clip */
+.oval img {
+  clip-path: ellipse(50% 40% at center);
+}
+
+/* Drop Shadow */
+.shadow img {
+  box-shadow: 8px 8px 12px rgba(0,0,0,0.4);
+}
+
+/* Gradient Background */
+.gradient-bg {
+  background: linear-gradient(to top right, #c9e7ff, #d6c6ff);
+}
+
+.gradient-bg img {
+  box-shadow: 3px 3px 8px rgba(0,0,0,0.25);
+}
+
+/* Invert Colors */
+.invert img {
+  filter: invert(100%);
+}
+
+/* Layered Field + Game */
+.layered .field {
   width: 100%;
+  height: 100%;
+  filter: grayscale(100%);
 }
 
 .layered .overlay {
   position: absolute;
-  top: 25%;
-  left: 25%;
-  width: 50%;
-  opacity: 0.9;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
 }
 
-.hue-rotate img {
-  filter: hue-rotate(120deg);
+/* Blurred Theater Overlay */
+.blur-overlay img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(2px);
 }
 
-.invert img {
-  filter: invert(100%);
+.blur-overlay p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5em;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 0 8px black;
 }
