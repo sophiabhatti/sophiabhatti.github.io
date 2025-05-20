@@ -3,106 +3,135 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Interactive Flashcards</title>
+  <title>CSS3 Image Effects Assignment</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f0f0f0;
-      margin: 0;
-      padding: 20px;
+      background: #e8e8e8;
+      font-family: sans-serif;
       display: flex;
-      flex-direction: column;
-      align-items: center;
+      justify-content: center;
+      padding: 40px;
     }
 
-    h1 {
-      animation: flashHello 1.5s ease-in-out 1;
-      font-size: 2.5em;
-      color: purple;
-    }
-
-    @keyframes flashHello {
-      0% { opacity: 0; color: black; }
-      50% { opacity: 1; color: purple; }
-      100% { opacity: 0; color: black; }
-    }
-
-    .container {
+    .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 20px;
-      max-width: 1000px;
-      margin-top: 30px;
     }
 
-    .card {
+    .img-card {
       background: white;
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      position: relative;
-      transition: transform 0.3s ease, background-color 0.3s ease;
-      cursor: pointer;
+      width: 250px;
+      height: 250px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: relative;
     }
 
-    .card:hover {
-      transform: scale(1.05);
-      background-color: #e6e6ff;
+    .img-card img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
 
-    .question {
+    /* 1. Penguins - Elliptical crop */
+    .oval img {
+      clip-path: ellipse(50% 45% at 50% 50%);
+    }
+
+    /* 2. Football - Layered grayscale with overlay */
+    .layered {
+      position: relative;
+    }
+
+    .layered .field {
+      filter: grayscale(100%);
+    }
+
+    .layered .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.6;
+    }
+
+    /* 3. Dinosaur - Drop shadow */
+    .shadow img {
+      filter: drop-shadow(6px 6px 6px rgba(0,0,0,0.5));
+    }
+
+    /* 4. Seagull - Gradient background + shadow */
+    .gradient {
+      background: linear-gradient(to bottom right, #b3cfff, #d9b3ff);
+    }
+
+    .gradient img {
+      filter: drop-shadow(3px 3px 5px rgba(0,0,0,0.4));
+      width: 80%;
+    }
+
+    /* 5. Butterfly - Inverted colors + oval */
+    .invert-oval img {
+      filter: invert(100%);
+      clip-path: ellipse(50% 45% at 50% 50%);
+    }
+
+    /* 6. Theater - Blur with overlay text */
+    .blur-text img {
+      filter: blur(2px);
+    }
+
+    .blur-text p {
+      position: absolute;
+      color: white;
+      font-size: 1.5em;
       font-weight: bold;
-      font-size: 1.2em;
-    }
-
-    .answer {
-      opacity: 0;
-      transition: opacity 0.5s ease;
-      margin-top: 10px;
-      font-style: italic;
-    }
-
-    .card:hover .answer {
-      opacity: 1;
+      text-shadow: 0 0 5px black;
     }
   </style>
 </head>
 <body>
-  <h1>Hello</h1>
-  <div class="container">
-    <div class="card">
-      <div class="question">1. What's my favorite color?</div>
-      <div class="answer">Purple</div>
+
+  <div class="gallery">
+    <!-- 1. Penguins -->
+    <div class="img-card oval">
+      <img src="images/penguins.jpg" alt="Penguins">
     </div>
-    <div class="card">
-      <div class="question">2. What do I want to be when I grow up?</div>
-      <div class="answer">Aerospace Engineer</div>
+
+    <!-- 2. Football + Tic Tac Toe -->
+    <div class="img-card layered">
+      <img src="images/football_field.jpg" alt="Football Field" class="field">
+      <img src="images/tic-tac-toe.png" alt="Tic Tac Toe" class="overlay">
     </div>
-    <div class="card">
-      <div class="question">3. What color is my hair?</div>
-      <div class="answer">Black</div>
+
+    <!-- 3. Dinosaur with shadow -->
+    <div class="img-card shadow">
+      <img src="images/dinosaur.png" alt="Dino">
     </div>
-    <div class="card">
-      <div class="question">4. What is my favorite programming language?</div>
-      <div class="answer">Java</div>
+
+    <!-- 4. Seagull with gradient and shadow -->
+    <div class="img-card gradient">
+      <img src="images/seagull.png" alt="Seagull">
     </div>
-    <div class="card">
-      <div class="question">5. What month was I born?</div>
-      <div class="answer">November</div>
+
+    <!-- 5. Butterfly - Inverted + oval -->
+    <div class="img-card invert-oval">
+      <img src="images/butterfly.jpg" alt="Butterfly">
     </div>
-    <div class="card">
-      <div class="question">6. What's my favorite sport?</div>
-      <div class="answer">Running</div>
-    </div>
-    <div class="card">
-      <div class="question">7. What am I majoring in during college?</div>
-      <div class="answer">Mechanical Engineering</div>
-    </div>
-    <div class="card">
-      <div class="question">8. What's my favorite weather?</div>
-      <div class="answer">Snow</div>
+
+    <!-- 6. Theater - Blurred with Text -->
+    <div class="img-card blur-text">
+      <img src="images/theater_stage.jpg" alt="Theater">
+      <p>Presenting</p>
     </div>
   </div>
+
 </body>
 </html>
