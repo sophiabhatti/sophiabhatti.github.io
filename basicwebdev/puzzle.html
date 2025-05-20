@@ -8,7 +8,7 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #f2f9ff;
+      background-color: #eef6fb;
       padding: 20px;
     }
 
@@ -26,7 +26,7 @@
     header {
       grid-area: header;
       text-align: center;
-      background-color: #e0f7fa;
+      background-color: #d6f5f5;
       padding: 20px;
       border-radius: 10px;
     }
@@ -34,7 +34,7 @@
     header h1 {
       margin: 0;
       font-size: 2em;
-      color: #005b69;
+      color: #006666;
     }
 
     .info {
@@ -52,19 +52,22 @@
     .flex-puzzle {
       display: flex;
       flex-wrap: wrap;
-      width: 300px; /* 3 items per row * 100px */
-      height: 300px;
+      width: 300px;  /* 3 x 100px columns */
+      height: 300px; /* 3 x 100px rows */
       border: 2px solid #ccc;
       border-radius: 8px;
       background-color: #fff;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      overflow: hidden;
     }
 
     .flex-puzzle img {
       width: 100px;
       height: 100px;
       object-fit: cover;
-      border: 1px solid #ddd;
+      margin: 0;
+      padding: 0;
+      display: block;
     }
 
     .hidden-piece {
@@ -74,11 +77,11 @@
     footer {
       grid-area: footer;
       text-align: center;
-      background-color: #ffecf0;
+      background-color: #ffe6ea;
       padding: 15px;
       font-size: 0.9em;
       border-radius: 10px;
-      color: #b30059;
+      color: #a10033;
     }
   </style>
 </head>
@@ -92,23 +95,23 @@
 
     <section class="puzzle-container">
       <div class="flex-puzzle">
-        <!-- Correct puzzle piece order: AGJ, BHD, FIE -->
-        <img src="images/puzzle3_A.jpg" alt="A">
-        <img src="images/puzzle3_G.jpg" alt="G">
-        <img src="images/puzzle3_J.jpg" alt="J">
-        <img src="images/puzzle3_B.jpg" alt="B">
-        <img src="images/puzzle3_H.jpg" alt="H">
-        <img src="images/puzzle3_D.jpg" alt="D">
-        <img src="images/puzzle3_F.jpg" alt="F">
-        <img src="images/puzzle3_I.jpg" alt="I">
-        <img src="images/puzzle3_E.jpg" alt="E">
-        <!-- Extra piece (C) hidden -->
-        <img src="images/puzzle3_C.jpg" alt="Extra Piece C" class="hidden-piece">
+        <!-- Correct 3×3 puzzle layout -->
+        <img src="images/puzzle3_A.jpg" alt="A" />
+        <img src="images/puzzle3_G.jpg" alt="G" />
+        <img src="images/puzzle3_J.jpg" alt="J" />
+        <img src="images/puzzle3_B.jpg" alt="B" />
+        <img src="images/puzzle3_H.jpg" alt="H" />
+        <img src="images/puzzle3_D.jpg" alt="D" />
+        <img src="images/puzzle3_F.jpg" alt="F" />
+        <img src="images/puzzle3_I.jpg" alt="I" />
+        <img src="images/puzzle3_E.jpg" alt="E" />
+        <!-- Extra (incorrect) piece hidden -->
+        <img src="images/puzzle3_C.jpg" alt="Extra Piece C" class="hidden-piece" />
       </div>
     </section>
 
     <footer>
-      This puzzle was solved using CSS Flexbox to arrange the pieces in a 3×3 layout. The extra piece ("C") was hidden using <code>display: none</code>.
+      This puzzle was solved using CSS Flexbox to arrange the pieces in a 3×3 layout. The extra piece ("C") was included but hidden using <code>display: none</code>.
     </footer>
   </div>
 
