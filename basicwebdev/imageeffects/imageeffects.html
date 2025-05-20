@@ -62,9 +62,9 @@
       opacity: 0.6;
     }
 
-    /* 3. Dinosaur - Hue rotation adjusted to bluish purple */
+    /* 3. Dinosaur - Hue rotation adjusted to purple */
     .shadow img {
-      filter: hue-rotate(270deg) drop-shadow(6px 6px 6px rgba(0,0,0,0.5));
+      filter: hue-rotate(220deg) drop-shadow(6px 6px 6px rgba(0,0,0,0.5));
     }
 
     /* 4. Seagull - Gradient background + shadow */
@@ -77,9 +77,11 @@
       width: 80%;
     }
 
-    /* 5. Butterfly - Inverted colors only */
+    /* 5. Butterfly - Inverted colors with custom corner rounding */
     .invert-oval img {
       filter: invert(100%);
+      border-top-left-radius: 30px;
+      border-bottom-right-radius: 30px;
     }
 
     /* 6. Theater - Blur with overlay text */
@@ -120,7 +122,7 @@
       <img src="images/seagull.png" alt="Seagull">
     </div>
 
-    <!-- 5. Butterfly - Inverted only -->
+    <!-- 5. Butterfly - Inverted with corner curve -->
     <div class="img-card invert-oval">
       <img src="images/butterfly.jpg" alt="Butterfly">
     </div>
