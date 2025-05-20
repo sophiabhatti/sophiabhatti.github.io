@@ -8,93 +8,124 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
+      background-color: #f0f8ff;
     }
 
+    /* CSS Grid layout for entire page */
     .grid-container {
       display: grid;
+      grid-template-areas: 
+        "header"
+        "puzzle"
+        "footer";
       grid-template-rows: auto 1fr auto;
       min-height: 100vh;
+      padding: 20px;
     }
 
     header {
-      background-color: #ffecf0;
-      padding: 20px;
+      grid-area: header;
       text-align: center;
-      border-bottom: 2px solid #ddd;
+      background-color: #ffe6f0;
+      padding: 20px;
+      border-radius: 8px;
     }
 
     header h1 {
       margin: 0;
       font-size: 2em;
+      color: #b30059;
     }
 
+    .info {
+      font-size: 1em;
+      color: #333;
+    }
+
+    /* Puzzle section */
     .puzzle-container {
+      grid-area: puzzle;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 30px;
+      margin: 30px 0;
     }
 
     .flex-puzzle {
       display: flex;
       flex-wrap: wrap;
-      width: 400px; /* 4 columns * 100px */
+      width: 400px; /* 4 images per row * 100px */
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      background-color: #fff;
+      padding: 5px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
 
     .flex-puzzle img {
       width: 100px;
       height: 100px;
       object-fit: cover;
-      border: 1px solid #ccc;
+      border: 1px solid #ddd;
     }
 
+    /* Hiding the extra puzzle piece */
     .hidden-piece {
       display: none;
     }
 
     footer {
+      grid-area: footer;
+      text-align: center;
       background-color: #e0f7fa;
       padding: 15px;
-      text-align: center;
       font-size: 0.9em;
-      border-top: 2px solid #ddd;
+      color: #007777;
+      border-radius: 8px;
     }
   </style>
 </head>
 <body>
 
   <div class="grid-container">
+
     <header>
       <h1>Butterfly Puzzle</h1>
-      <p>By Sophia Bhatti | Completed: May 20, 2025</p>
+      <p class="info">Created by <strong>Sophia Bhatti</strong> | Puzzle: Butterflies | Date: May 20, 2025</p>
     </header>
 
     <section class="puzzle-container">
       <div class="flex-puzzle">
-        <img src="images/puzzle1_A.jpg" alt="Piece A" />
-        <img src="images/puzzle1_B.jpg" alt="Piece B" />
-        <img src="images/puzzle1_C.jpg" alt="Piece C" />
-        <img src="images/puzzle1_D.jpg" alt="Piece D" />
-        <img src="images/puzzle1_E.jpg" alt="Piece E" />
-        <img src="images/puzzle1_F.jpg" alt="Piece F" />
-        <img src="images/puzzle1_G.jpg" alt="Piece G" />
-        <img src="images/puzzle1_H.jpg" alt="Piece H" />
-        <img src="images/puzzle1_I.jpg" alt="Piece I" />
-        <img src="images/puzzle1_J.jpg" alt="Piece J" />
-        <img src="images/puzzle1_K.jpg" alt="Piece K" />
-        <img src="images/puzzle1_L.jpg" alt="Piece L" />
-        <img src="images/puzzle1_M.jpg" alt="Piece M" />
-        <img src="images/puzzle1_N.jpg" alt="Piece N" />
-        <img src="images/puzzle1_O.jpg" alt="Piece O" />
-        <img src="images/puzzle1_P.jpg" alt="Piece P" />
-        <img src="images/puzzle1_Q.jpg" alt="Extra Piece Q" class="hidden-piece" />
+        <!-- Correct 4x4 arrangement -->
+        <img src="images/puzzle1_A.jpg" alt="A" />
+        <img src="images/puzzle1_B.jpg" alt="B" />
+        <img src="images/puzzle1_C.jpg" alt="C" />
+        <img src="images/puzzle1_D.jpg" alt="D" />
+
+        <img src="images/puzzle1_E.jpg" alt="E" />
+        <img src="images/puzzle1_F.jpg" alt="F" />
+        <img src="images/puzzle1_G.jpg" alt="G" />
+        <img src="images/puzzle1_H.jpg" alt="H" />
+
+        <img src="images/puzzle1_I.jpg" alt="I" />
+        <img src="images/puzzle1_J.jpg" alt="J" />
+        <img src="images/puzzle1_K.jpg" alt="K" />
+        <img src="images/puzzle1_L.jpg" alt="L" />
+
+        <img src="images/puzzle1_M.jpg" alt="M" />
+        <img src="images/puzzle1_N.jpg" alt="N" />
+        <img src="images/puzzle1_O.jpg" alt="O" />
+        <img src="images/puzzle1_P.jpg" alt="P" />
+
+        <!-- The faulty piece -->
+        <img src="images/puzzle1_Q.jpg" alt="Extra Piece" class="hidden-piece" />
       </div>
     </section>
 
     <footer>
-      <p>This puzzle is solved using CSS Flexbox and Grid. One incorrect piece was hidden using CSS.</p>
+      <p>This puzzle uses CSS Grid for layout and Flexbox for image assembly. The incorrect piece is hidden using the <code>display</code> property.</p>
     </footer>
+
   </div>
 
 </body>
