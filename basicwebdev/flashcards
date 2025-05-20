@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Flashcards</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      animation: flashHello 1.5s ease-in-out 1;
+      font-size: 2.5em;
+      color: purple;
+    }
+
+    @keyframes flashHello {
+      0% { opacity: 0; color: black; }
+      50% { opacity: 1; color: purple; }
+      100% { opacity: 0; color: black; }
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      position: relative;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      background-color: #e6e6ff;
+    }
+
+    .question {
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+
+    .answer {
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      margin-top: 10px;
+      font-style: italic;
+    }
+
+    .card:hover .answer {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <h1>Hello</h1>
+  <div class="container">
+    <div class="card">
+      <div class="question">1. What's my favorite color?</div>
+      <div class="answer">Purple</div>
+    </div>
+    <div class="card">
+      <div class="question">2. What do I want to be when I grow up?</div>
+      <div class="answer">Aerospace Engineer</div>
+    </div>
+    <div class="card">
+      <div class="question">3. What color is my hair?</div>
+      <div class="answer">Black</div>
+    </div>
+    <div class="card">
+      <div class="question">4. What is my favorite programming language?</div>
+      <div class="answer">Java</div>
+    </div>
+    <div class="card">
+      <div class="question">5. What month was I born?</div>
+      <div class="answer">November</div>
+    </div>
+    <div class="card">
+      <div class="question">6. What's my favorite sport?</div>
+      <div class="answer">Running</div>
+    </div>
+    <div class="card">
+      <div class="question">7. What am I majoring in during college?</div>
+      <div class="answer">Mechanical Engineering</div>
+    </div>
+    <div class="card">
+      <div class="question">8. What's my favorite weather?</div>
+      <div class="answer">Snow</div>
+    </div>
+  </div>
+</body>
+</html>
