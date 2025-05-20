@@ -2,26 +2,85 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My Daily Schedule</title>
+  <title>My Busy Day Schedule</title>
   <style>
+    /* Style for the entire table */
     table {
       width: 70%;
-      margin: 30px auto;
+      margin: 40px auto;
       border-collapse: collapse;
       font-family: Arial, sans-serif;
-      background-color: #f4f9ff;
-      border: 2px solid #003366;
+      background-color: #fdfdfd;
+      border: 2px solid #444;
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
     }
 
+    /* Style for table headers */
     th {
       background-color: #003366;
       color: white;
-      padding: 10px;
+      padding: 12px;
       font-size: 1.2em;
       border: 1px solid #ccc;
     }
 
+    /* Style for all table cells */
     td {
       padding: 10px;
-      text-align: center;
-      border:
+      text-align: left;
+      border: 1px solid #ccc;
+    }
+
+    /* Style for a specific column (Time) */
+    td.time {
+      font-weight: bold;
+      background-color: #eef5ff;
+      width: 25%;
+    }
+
+    /* Style for a specific row (highlighted event) */
+    tr.special {
+      background-color: #d4edda;
+    }
+
+    /* Hover effect for all rows */
+    tr:hover {
+      background-color: #f0f8ff;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 style="text-align:center;">My Busy Day Schedule</h1>
+
+  <table>
+    <tr>
+      <th>Time</th>
+      <th>Event</th>
+    </tr>
+    <tr>
+      <td class="time">4:30 AM</td>
+      <td>Wake Up</td>
+    </tr>
+    <tr>
+      <td class="time">7:00 AM</td>
+      <td>Flight to Pennsylvania</td>
+    </tr>
+    <tr>
+      <td class="time">11:30 AM</td>
+      <td>Train to UPenn</td>
+    </tr>
+    <tr class="special">
+      <td class="time">3:30 PM</td>
+      <td>Micro and Nano Fluidics Class</td>
+    </tr>
+    <tr>
+      <td class="time">5:00 PM</td>
+      <td>Train Home</td>
+    </tr>
+    <tr>
+      <td class="time">7:15 PM</td>
+      <td>Yoga Class with Dad</td>
+    </tr>
+    <tr>
+      <td class="time
